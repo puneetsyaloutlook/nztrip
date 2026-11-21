@@ -163,16 +163,16 @@ var DAYS = [
     facts: [["Driving", "Airport to Frankton and town"], ["Walking", "Minimal"], ["Stay", "Novotel Queenstown Lakeside, one night"]],
     stops: [
       { type: "flight", title: "NZ112 Sydney (Kingsford Smith) to Auckland",
-        stats: [["Departs", "Sat 5 Dec, 7:25pm"], ["Arrives", "Sun 6 Dec, 12:40am"], ["Seats", "24A, 24B, 24C"]],
-        text: ["Your fare includes 3 bags of 23 kg each. A vegan meal is requested for one traveller."] },
+        stats: [["Departs", "Sat 5 Dec, 7:25pm"], ["Arrives", "Sun 6 Dec, 12:40am"], ["Check-in closes", "5:55pm"], ["Seats", "24A, 24B, 24C"]],
+        text: ["Your fare includes 1 checked bag of 23 kg and 1 carry-on bag of 7 kg for each of you. A vegan meal is requested for one traveller."] },
       { type: "transfer", title: "Connection at Auckland Airport",
-        stats: [["Window", "12:40am to 6:30am"], ["Gap", "5 hours 50 minutes"], ["NZ611 check-in closes", "5:00am"]],
+        stats: [["Window", "12:40am to 6:30am"], ["Gap", "5 hours 50 minutes"], ["NZ611 check-in closes", "6:00am"]],
         text: ["Collect your bags, clear customs and biosecurity, then go to the Air New Zealand domestic transfer desk on the ground floor of the international terminal. If it is closed, walk the 950 m covered walkway to the domestic terminal, which takes 10 to 15 minutes. The free bus runs only from 5am.",
                "I could not confirm when the transfer desk or the domestic check-in opens overnight, so ask Air New Zealand before you fly.",
                "Australian passport holders need no visa and no NZeTA. Each of you completes a free New Zealand Traveller Declaration before you reach passport control, and you declare used hiking boots and other outdoor gear."] },
       { type: "flight", title: "NZ611 Auckland to Queenstown",
         stats: [["Departs", "6:30am"], ["Arrives", "8:25am"], ["Seats", "25A, 25B, 25C"]],
-        text: ["Check in by 5:00am, when check-in closes."] },
+        text: ["Check-in and bag drop close at 6:00am, 30 minutes before departure."] },
       { type: "car", title: "Budget hire car, Queenstown Airport",
         stats: [["Pick-up", "Sun 6 Dec, 9:00am"], ["Return", "Sat 12 Dec, 5:30pm"], ["Car", "Intermediate SUV"]],
         text: ["A Mitsubishi Outlander or similar, with unlimited kilometres. Go to the Budget counter in the terminal building, which is open from 8:00am to 10:00pm. Bring your driving licence and the credit card used for the booking, because the names must match. Budget holds up to NZ$200 plus estimated extras on the card at pick-up.",
@@ -298,7 +298,7 @@ var DAYS = [
         text: ["Return the Budget car by 5:30pm, the time on your booking. I have not seen Budget's fuel policy, so check it before you return the car."] },
       { type: "flight", title: "NZ628 Queenstown to Auckland",
         stats: [["Departs", "8:30pm"], ["Arrives", "10:20pm"], ["Seats", "34A, 34B, 34C"]],
-        text: ["Your booking says check-in closes at 7:30pm."] },
+        text: ["Check-in and bag drop close at 8:00pm, 30 minutes before departure."] },
       { type: "stay", title: "Hotel near Auckland Airport",
         stats: [["Window", "10:20pm to 9:00am"], ["Gap", "10 hours 40 minutes"], ["Hotel", "Not booked"]],
         text: ["Ask Air New Zealand whether your bags are checked through to Sydney. If not, you collect them in Auckland and take them to the hotel. I have not checked hotels, prices or shuttle times."],
@@ -308,11 +308,11 @@ var DAYS = [
   {
     tab: "Sun 13 Dec", label: "Day 8", title: "Fly home to Sydney", date: "Sunday 13 December",
     lead: "The flight home leaves Auckland at 9:00am.",
-    facts: [["Flight time", "3 hours 35 minutes"], ["Bags", "3 x 23 kg each"], ["Check-in", "Not shown on your booking"]],
+    facts: [["Flight time", "3 hours 35 minutes"], ["Bags", "3 x 23 kg each"], ["Check-in closes", "7:30am"]],
     stops: [
       { type: "flight", title: "NZ103 Auckland to Sydney (Kingsford Smith)",
         stats: [["Departs", "9:00am"], ["Arrives", "10:35am"], ["Seats", "Not shown on your booking"]],
-        text: ["The booking does not show a check-in closing time or seat numbers for this flight. Check both with Air New Zealand."] }
+        text: ["Check-in and bag drop close at 7:30am, 90 minutes before departure. Your e-ticket does not show seat numbers for this flight, so check them in the Air New Zealand app."] }
     ]
   },
   {
@@ -336,6 +336,7 @@ var BOOKINGS = '' +
 '<div class="box"><h3>Before you fly</h3><ul>' +
 '<li>Australian passport holders need no visa and no NZeTA. Check each passport&#39;s expiry date against your travel dates and the airline&#39;s conditions.</li>' +
 '<li>Each of you completes a free New Zealand Traveller Declaration before you reach passport control. Do it before you board.</li>' +
+'<li>Online check-in opens 24 hours before each flight, in the Air New Zealand app. Your e-ticket (booking reference FWF6FH) is the document for check-in, customs and security.</li>' +
 '<li>Declare used hiking boots and other outdoor gear. Clean them before you pack them.</li>' +
 '<li>Ask the Novotel for early check-in on Sunday 6 December, and to hold your bags on Friday 11 and Saturday 12 December.</li>' +
 '<li>Find the excess amount in Budget&#39;s rental terms, and check whether your travel insurance or credit card covers it.</li>' +
