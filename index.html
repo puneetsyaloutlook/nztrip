@@ -162,6 +162,11 @@ var DAYS = [
     lead: "You arrive after a night with little sleep. The plan is a sit-down breakfast, a nap as soon as the room is ready, and an early night.",
     facts: [["Driving", "Airport to Frankton and town"], ["Walking", "Minimal"], ["Stay", "Novotel Queenstown Lakeside, one night"]],
     stops: [
+      { type: "drive", title: "Drive from Canberra to Sydney Airport",
+        stats: [["Leave", "By 11:30am, Sat 5 Dec"], ["Distance", "About 285 km"], ["Drive time", "About 3 hours 10 minutes"], ["Parking from", "3:00pm"]],
+        text: ["Take the Federal Highway to Goulburn, then the Hume Motorway and the M5 to the airport. Sources give 280 to 285 km and about 3 hours without stops, so leaving by 11:30am allows for a break and Saturday traffic. Your parking starts at 3:00pm, and check-in for NZ112 closes at 5:55pm. I have not checked tolls or traffic.",
+               "Charge the car fully before you leave. I have not checked whether the car park has chargers, and the car stays there for 8 nights."],
+        book: "Parking: Sydney Airport International T1 P7, entry Sat 5 Dec at 3:00pm, exit Sun 13 Dec at 1:00pm, $173.14 after the promo code. I have not seen a payment confirmation, so check that it went through." },
       { type: "flight", title: "NZ112 Sydney (Kingsford Smith) to Auckland",
         stats: [["Departs", "Sat 5 Dec, 7:25pm"], ["Arrives", "Sun 6 Dec, 12:40am"], ["Check-in closes", "5:55pm"], ["Seats", "24A, 24B, 24C"]],
         text: ["Your fare includes 1 checked bag of 23 kg and 1 carry-on bag of 7 kg for each of you. A vegan meal is requested for one traveller."] },
@@ -307,12 +312,16 @@ var DAYS = [
   },
   {
     tab: "Sun 13 Dec", label: "Day 8", title: "Fly home to Sydney", date: "Sunday 13 December",
-    lead: "The flight home leaves Auckland at 9:00am.",
-    facts: [["Flight time", "3 hours 35 minutes"], ["Bags", "3 x 23 kg each"], ["Check-in closes", "7:30am"]],
+    lead: "The flight home leaves Auckland at 9:00am, and you drive home to Canberra from Sydney Airport after you land.",
+    facts: [["Flight time", "3 hours 35 minutes"], ["Bags", "3 x 23 kg each"], ["Check-in closes", "7:30am"], ["Drive home", "About 3 hours 10 minutes"]],
     stops: [
       { type: "flight", title: "NZ103 Auckland to Sydney (Kingsford Smith)",
         stats: [["Departs", "9:00am"], ["Arrives", "10:35am"], ["Seats", "Not shown on your booking"]],
-        text: ["Check-in and bag drop close at 7:30am, 90 minutes before departure. Your e-ticket does not show seat numbers for this flight, so check them in the Air New Zealand app."] }
+        text: ["Check-in and bag drop close at 7:30am, 90 minutes before departure. Your e-ticket does not show seat numbers for this flight, so check them in the Air New Zealand app."] },
+      { type: "drive", title: "Drive from Sydney Airport to Canberra",
+        stats: [["Leave by", "1:00pm"], ["Distance", "About 285 km"], ["Drive time", "About 3 hours 10 minutes"], ["Home", "About 4:15pm"]],
+        text: ["NZ103 lands at 10:35am. Collect your bags, clear customs and go to car park P7, then leave before the 1:00pm parking exit time. Take the M5 and the Hume Motorway south, then the Federal Highway at Goulburn. The home time assumes no stops.",
+               "Check whether the battery covers 285 km with three people and bags. If not, plan a charge on the way. Goulburn is about two thirds of the way from Sydney, and I have not checked chargers on the route."] }
     ]
   },
   {
@@ -325,6 +334,7 @@ var BOOKINGS = '' +
 '<div class="box"><h3>Booked</h3><ul>' +
 '<li><b>Hire car:</b> Budget at Queenstown Airport, pick-up Sunday 6 December at 9:00am and return Saturday 12 December at 5:30pm. Intermediate SUV (Mitsubishi Outlander or similar), unlimited kilometres, prepaid NZ$725.79. Reference 07616239AU1. Only you are listed as a driver. You declined the excess reduction and the zero excess option, so you pay for damage up to the excess, and I have not seen the amount. Cancelling at least 24 hours before pick-up costs up to NZ$86.25, and within 24 hours up to NZ$172.50. A no-show forfeits the whole amount, and an early return gets no refund.</li>' +
 '<li><b>Queenstown, Sunday 6 December:</b> Novotel Queenstown Lakeside, one night, Standard Room with Two Double Beds, Saver Rate (non-refundable, paid online). AUD 413.53 at checkout, including AUD 49.45 for parking (NZD 501.75). Check-in 3:00pm, check-out 11:00am.</li>' +
+'<li><b>Sydney Airport parking:</b> International T1 P7, entry Saturday 5 December at 3:00pm, exit Sunday 13 December at 1:00pm, $173.14 after the promo code. I have not seen a payment confirmation.</li>' +
 '<li><b>Te Anau, Monday 7 to Friday 11 December:</b> Distinction Te Anau Hotel and Villas, Deluxe Two Bedroom Villa, four nights with breakfast, on the 3 Nights B&amp;B Save 20% deal (non-refundable). NZ$2,342.40. Booking ID DIS-468195. Check-in from 2:00pm, check-out before 10:00am. You asked for the king and two singles bedding, which is not guaranteed.</li>' +
 '<li><b>Queenstown, Friday 11 December:</b> Novotel Queenstown Lakeside, one night, Standard Room with Two Double Beds, Saver Rate (non-refundable). AUD 406.36 before any extras. I have not seen the Novotel confirmation numbers.</li>' +
 '</ul></div>' +
