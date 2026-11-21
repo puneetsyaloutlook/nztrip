@@ -461,10 +461,6 @@ function panelHtml(d, idx) {
   var h = '<div class="ph"><h2>' + d.label + ': ' + d.title + '</h2><p class="date">' + d.date + '</p></div>';
   if (d.custom) { return h + BOOKINGS; }
   h += '<p class="lead">' + d.lead + '</p>';
-  h += '<dl class="snapshot">';
-  d.facts.forEach(function (f) { h += '<div><dt>' + f[0] + '</dt><dd>' + f[1] + '</dd></div>'; });
-  h += '</dl>';
-  h += legendHtml();
   d.stops.forEach(function (s) { h += stopHtml(s); });
   if (d.after) { h += '<p class="lead" style="margin-top:16px;font-size:0.9rem;color:#55556A">' + d.after + '</p>'; }
   return h;
