@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Zealand itinerary, 6 to 13 December 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Lora:wght@400;600;700&display=swap">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-padding-top: 58px; }
+body {
+  font-family: "Public Sans", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  background: #F4F4F7;
+  color: #1A1A2E;
+}
+h1, h2, h3 { font-family: "Lora", Georgia, serif; font-weight: 700; line-height: 1.25; }
+a { color: #376DA4; }
+
+.header { background: #1D6068; color: #fff; padding: 18px 20px 12px; }
+.header-inner, .strip-inner, .nav-inner, .main { max-width: 780px; margin: 0 auto; }
+.header h1 { font-size: 1.6rem; }
+.header details { margin-top: 4px; }
+.header summary { font-size: 0.9rem; padding: 4px 0; color: rgba(255,255,255,0.82); cursor: pointer; width: fit-content; }
+.header summary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.header p { font-size: 0.95rem; color: rgba(255,255,255,0.88); max-width: 70ch; margin-top: 6px; }
+
+.strip { background: #164A50; padding: 10px 20px; }
+.strip-inner { display: flex; flex-wrap: wrap; gap: 4px 24px; }
+.place { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: rgba(255,255,255,0.9); }
+.dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+
+.nav { background: #fff; border-bottom: 1px solid #D4D4DA; position: sticky; top: 0; z-index: 10; }
+.nav-inner { display: flex; overflow-x: auto; padding: 0 12px; }
+.tab {
+  flex: none;
+  min-height: 48px;
+  padding: 6px 10px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #55556A;
+  cursor: pointer;
+  text-align: left;
+}
+.tab .t1 { display: block; font-size: 0.72rem; font-weight: 400; line-height: 1.2; }
+.tab .t2 { display: block; line-height: 1.25; }
+.tab small { display: block; line-height: 1.2; font-size: 0.72rem; font-weight: 400; color: #55556A; }
+.tab:hover { color: #1A1A2E; }
+.tab:focus-visible { outline: 2px solid #376DA4; outline-offset: -2px; }
+.tab[aria-selected="true"] { color: #1D6068; border-bottom-color: #1D6068; font-weight: 700; }
+
+.main { padding: 20px 20px 56px; }
+.panel[hidden] { display: none; }
+.ph { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 12px; margin-bottom: 10px; }
+.panel h2 { font-size: 1.5rem; }
+.panel .date { font-size: 0.92rem; color: #55556A; }
+.lead { max-width: 76ch; margin-bottom: 14px; font-size: 1rem; }
+
+.snapshot {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  background: #fff;
+  border: 1px solid #D4D4DA;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.snapshot div { padding: 9px 14px; margin: 0 -1px -1px 0; border-right: 1px solid #D4D4DA; border-bottom: 1px solid #D4D4DA; }
+.snapshot dt { font-size: 0.75rem; line-height: 1.35; color: #55556A; }
+.snapshot dd { font-size: 0.92rem; line-height: 1.4; font-weight: 600; }
+
+.card {
+  background: #fff;
+  border: 1px solid #D4D4DA;
+  border-left: 4px solid #8E8E9A;
+  border-radius: 8px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 2px rgba(16,16,32,0.06);
+}
+.card + .card { margin-top: 12px; }
+.card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.card-head .ttl { min-width: 0; }
+.icon { width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex: none; }
+.icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.kind { display: block; font-size: 0.75rem; line-height: 1.3; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #3D3D50; }
+.card h3 { font-size: 1.15rem; line-height: 1.3; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 12px 16px; margin-bottom: 12px; padding: 14px 0 0; border-top: 1px solid #E6E6EC; }
+.stats dt { font-size: 0.75rem; line-height: 1.3; margin-bottom: 2px; color: #55556A; }
+.stats dd { font-size: 1.05rem; font-weight: 700; line-height: 1.35; }
+.card p { max-width: 70ch; font-size: 0.95rem; line-height: 1.55; }
+.card p + p { margin-top: 8px; }
+.card .book { margin-top: 12px; padding: 8px 12px; background: #F4F4F7; border-radius: 6px; font-size: 0.88rem; }
+.card .book.done { border-left: 3px solid #2E7D5B; }
+.card .book.todo { border-left: 3px solid #C39A44; }
+.card.g-travel { border-left-color: #376DA4; }
+.card.g-travel .icon { background: #E6EEF7; color: #2B5A8C; }
+.card.g-doing { border-left-color: #479FA4; }
+.card.g-doing .icon { background: #E4F4F4; color: #1F6B70; }
+.card.g-eat { border-left-color: #C07A5E; }
+.card.g-eat .icon { background: #F8E9E2; color: #8A4429; }
+.card.g-stay { border-left-color: #7A68A8; }
+.card.g-stay .icon { background: #EDE9F6; color: #51407A; }
+.stats dd { display: flex; align-items: flex-start; gap: 6px; }
+.tod { display: inline-flex; flex: none; width: 20px; height: 20px; margin-top: 1px; }
+.tod svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.tod-morning { color: #A8620A; }
+.tod-afternoon { color: #9A7400; }
+.tod-evening { color: #B5482F; }
+.tod-night { color: #4B4F9E; }
+.legend { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; margin: 0 0 14px; font-size: 0.82rem; color: #3D3D50; }
+.legend-title { font-weight: 700; color: #1A1A2E; }
+.legend-item { display: inline-flex; align-items: center; gap: 5px; }
+.legend-item small { font-size: 0.75rem; color: #55556A; }
+
+.box { background: #fff; border: 1px solid #D4D4DA; border-radius: 8px; padding: 16px 18px; margin-bottom: 14px; }
+.box h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.box ol, .box ul { padding-left: 22px; max-width: 70ch; }
+.box li + li { margin-top: 6px; }
+.box ol + p, .box ul + p { margin-top: 12px; }
+.box p { max-width: 70ch; }
+.box p + p { margin-top: 8px; }
+.warn { background: #FFF9E8; border-color: #E8DDB8; }
+
+.footer { margin-top: 28px; font-size: 0.85rem; color: #3D3D50; }
+.footer h3 { font-size: 1rem; margin-bottom: 6px; }
+.footer ul { padding-left: 20px; }
+
+@media (max-width: 640px) {
+  .header { padding: 16px 16px 10px; }
+  .header h1 { font-size: 1.4rem; }
+  .strip { padding: 8px 16px; }
+  .main { padding: 16px 16px 48px; }
+  .legend-item small { display: none; }
+  .card { padding: 14px 14px 16px; }
+}
+@media print {
+  .nav { display: none; }
+  .panel[hidden] { display: block; }
+  .panel { break-before: page; }
+  body { background: #fff; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Itinerary days">
+  <div class="nav-inner" role="tablist" id="tabs"></div>
+</nav>
+
+<main class="main" id="panels"></main>
+
+<script>
+var DAYS = [
+  {
+    tab: "Sun 6 Dec", label: "Day 1", title: "Arrive in Queenstown and rest", date: "Sunday 6 December",
+    lead: "You arrive after a night with little sleep. The plan is a sit-down breakfast, a nap as soon as the room is ready, and an early night.",
+    facts: [["Driving", "Airport to Frankton and town"], ["Walking", "Minimal"], ["Stay", "Novotel Queenstown Lakeside, one night"]],
+    stops: [
+      { type: "flight", title: "NZ112 Sydney (Kingsford Smith) to Auckland",
+        stats: [["Departs", "Sat 5 Dec, 7:25pm"], ["Arrives", "Sun 6 Dec, 12:40am"], ["Seats", "24A, 24B, 24C"]],
+        text: ["Your fare includes 3 bags of 23 kg each. A vegan meal is requested for one traveller."] },
+      { type: "transfer", title: "Connection at Auckland Airport",
+        stats: [["Window", "12:40am to 6:30am"], ["Gap", "5 hours 50 minutes"], ["NZ611 check-in closes", "5:00am"]],
+        text: ["Collect your bags, clear customs and biosecurity, then go to the Air New Zealand domestic transfer desk on the ground floor of the international terminal. If it is closed, walk the 950 m covered walkway to the domestic terminal, which takes 10 to 15 minutes. The free bus runs only from 5am.",
+               "I could not confirm when the transfer desk or the domestic check-in opens overnight, so ask Air New Zealand before you fly.",
+               "Australian passport holders need no visa and no NZeTA. Each of you completes a free New Zealand Traveller Declaration before you reach passport control, and you declare used hiking boots and other outdoor gear."] },
+      { type: "flight", title: "NZ611 Auckland to Queenstown",
+        stats: [["Departs", "6:30am"], ["Arrives", "8:25am"], ["Seats", "25A, 25B, 25C"]],
+        text: ["Check in by 5:00am, when check-in closes."] },
+      { type: "car", title: "Budget hire car, Queenstown Airport",
+        stats: [["Pick-up", "Sun 6 Dec, 9:00am"], ["Return", "Sat 12 Dec, 5:30pm"], ["Car", "Intermediate SUV"]],
+        text: ["A Mitsubishi Outlander or similar, with unlimited kilometres. Go to the Budget counter in the terminal building, which is open from 8:00am to 10:00pm. Bring your driving licence and the credit card used for the booking, because the names must match. Budget holds up to NZ$200 plus estimated extras on the card at pick-up.",
+               "Only you are listed as a driver, so add anyone else at the counter. Confirm that your bags fit the boot. Your booking lists flight NZ611."],
+        book: "Booked and prepaid, NZ$725.79. Reference 07616239AU1." },
+      { type: "meal", title: "Sit-down breakfast in Frankton",
+        stats: [["Time", "Approx 9:30am"], ["Where", "Frankton"], ["Getting there", "Drive, a few minutes from the airport"]],
+        text: ["Three options near the airport: Eatery by Frank's at the Ramada (opens 7:00am daily), Cafe Society (a separate vegan menu, but reviews disagree and the kitchen closes early) and Odelay (opens 7:30am, but locals call it always busy). I could not confirm that any of them is quiet. Check the Sunday hours and the vegan menu before you go."] },
+      { type: "stay", title: "Novotel Queenstown Lakeside",
+        stats: [["Check-in", "3:00pm"], ["Check-out", "11:00am, Mon 7 Dec"], ["Where", "Corner of Earl St and Marine Parade"]],
+        text: ["Drive from Frankton into town and nap as soon as the room is ready. Ask the hotel for early check-in, or to keep your bags until the room is ready. Do this before you fly, because early check-in is not guaranteed."],
+        book: "Booked: Standard Room with Two Double Beds, Saver Rate (non-refundable), with parking added. AUD 413.53 (NZD 501.75)." },
+      { type: "sight", title: "Kiwi Birdlife Park (optional)",
+        stats: [["Time", "Late afternoon, only if you feel like it"], ["How long", "1 to 2 hours"], ["Where", "10 minute walk from the town centre"]],
+        text: ["A bird park where you can see kiwi and other native birds. Skip it if you need the sleep, and see it on Saturday instead. I have not checked opening hours or prices."] },
+      { type: "meal", title: "Early dinner and bed",
+        stats: [["Time", "From about 6:00pm"], ["Where", "Close to the Novotel"]],
+        text: ["Keep dinner close to the room."] }
+    ]
+  },
+  {
+    tab: "Mon 7 Dec", label: "Day 2", title: "Drive to Te Anau and the bird sanctuary", date: "Monday 7 December",
+    lead: "A 2 hour drive to Te Anau, a short visit to see native birds, and a quiet afternoon.",
+    facts: [["Driving", "170 km, about 2 hours"], ["Walking", "Easy"], ["Stay", "Distinction Te Anau villa, four nights"]],
+    stops: [
+      { type: "drive", title: "Queenstown to Te Anau",
+        stats: [["Leave", "About 8:15am"], ["Duration", "About 2 hours"], ["Distance", "170 km"]],
+        text: ["The route follows Lake Wakatipu and then crosses rural Southland. The time includes rest stops but not sightseeing."] },
+      { type: "sight", title: "Te Anau Bird Sanctuary",
+        stats: [["Time", "Approx 10:30am"], ["How long", "Short, not checked"], ["Where", "Te Anau, by car or a walk along the lake shore"]],
+        text: ["A short, flat visit to see native birds. A takahē feeding is listed at 10:30am, and I have not confirmed that time or the entry fee. Check both on the sanctuary's page before you go."] },
+      { type: "meal", title: "Lunch in Te Anau",
+        stats: [["Time", "From about 12:00pm"], ["Where", "Te Anau"]],
+        text: ["If the villa is not ready, leave your bags at reception while you have lunch."] },
+      { type: "stay", title: "Distinction Te Anau Hotel and Villas",
+        stats: [["Check-in", "From 2:00pm"], ["Check-out", "Before 10:00am, Fri 11 Dec"], ["Where", "Lakefront Drive, Te Anau"]],
+        text: ["Four nights in the Deluxe Two Bedroom Villa, with breakfast included. Ask about early check-in. The hotel's page does not describe a view from the villa. Rest in the afternoon and have an early dinner, because Tuesday starts at 7:00am."],
+        book: "Booked: NZ$2,342.40 (non-refundable). Booking ID DIS-468195. You asked for the king and two singles bedding, which is not guaranteed." }
+    ]
+  },
+  {
+    tab: "Tue 8 Dec", label: "Day 3", title: "Milford Sound", date: "Tuesday 8 December",
+    lead: "The most dramatic scenery in the plan, and the one day that depends on the weather, because the Milford Road sometimes closes. Check the road status the night before and again before you leave.",
+    facts: [["Driving", "120 km each way, allow about 3 hours"], ["Walking", "Short stops"], ["Stay", "Te Anau"]],
+    stops: [
+      { type: "drive", title: "Te Anau to Milford Sound",
+        stats: [["Leave", "About 7:00am"], ["Duration", "About 3 hours"], ["Distance", "120 km"]],
+        text: ["The drive takes about 2 hours without stops. Allow about 3 hours with viewpoints and short walks beside the road, plus about 30 minutes to park. Check in for the cruise at least 20 minutes before departure, so book a cruise that leaves from about 10:30am.",
+               "Your villa rate includes breakfast, served from 6:30am on weekdays, so eat quickly or take something with you."] },
+      { type: "cruise", title: "Milford Sound cruise",
+        stats: [["Departs", "From about 10:30am, set when you book"], ["Length", "Not checked"], ["Price", "Not checked"]],
+        text: [],
+        book: "Book first, online, with free cancellation, because a closed road moves the cruise to Wednesday." },
+      { type: "drive", title: "Milford Sound to Te Anau",
+        stats: [["Leave", "Afternoon"], ["Duration", "About 2 hours, allow 3"], ["Distance", "120 km"]],
+        text: ["Road status: highwayinfo.govt.nz or 0800 44 44 49. Return to Te Anau for the night, have dinner in town and go to bed early."] }
+    ]
+  },
+  {
+    tab: "Wed 9 Dec", label: "Day 4", title: "Doubtful Sound", date: "Wednesday 9 December",
+    lead: "A full day on the water in a quieter fiord, with wildlife. No driving beyond the pick-up.",
+    facts: [["Driving", "None if you take the Te Anau coach"], ["Walking", "Easy"], ["Stay", "Te Anau"]],
+    stops: [
+      { type: "cruise", title: "Doubtful Sound day cruise",
+        stats: [["Departs", "Set when you book"], ["Length", "About 9 hours"], ["Where", "RealNZ visitor centre, Lakefront Drive, Te Anau"], ["Price", "From NZ$345 per person, a reseller listing"]],
+        text: ["The trip crosses Lake Manapouri by boat, then goes by coach over Wilmot Pass to the sound. There is no road to the sound. The cruise on the sound lasts 3 hours, and you may see dolphins, fur seals and crested penguins. One reviewer calls it not quite as dramatic as Milford Sound but a lot quieter.",
+               "I have not checked the official price, December departures or availability. Snacks and drinks are on sale on board, and you can skip the drinks."],
+        book: "Book soon, online, the version that leaves from the RealNZ visitor centre in Te Anau, with a coach to Manapouri." }
+    ]
+  },
+  {
+    tab: "Thu 10 Dec", label: "Day 5", title: "Spare day and the glowworm caves", date: "Thursday 10 December",
+    lead: "A free day that you can use if the Milford or Doubtful Sound trip is cancelled. If you do not need it, the evening is the glowworm caves.",
+    facts: [["Driving", "Short, in town"], ["Walking", "Easy"], ["Stay", "Te Anau"]],
+    stops: [
+      { type: "sight", title: "Lake Te Anau shoreline walk",
+        stats: [["Time", "Morning"], ["How long", "Short and flat"], ["Where", "Te Anau lakefront"]],
+        text: ["A flat walk beside the lake. Keep the morning free, and use it for a cancelled trip if you need to."] },
+      { type: "meal", title: "Early dinner in Te Anau",
+        stats: [["Time", "Before the tour"], ["Where", "Te Anau"]],
+        text: ["Eat before the glowworm tour, not after it."] },
+      { type: "cruise", title: "Te Anau Glowworm Caves",
+        stats: [["Departs", "7:00pm listed, not confirmed"], ["Length", "Not checked"], ["Where", "Across Lake Te Anau"]],
+        text: ["A boat ride across the lake and a guided walk into the caves. The page I opened gives no Māori history. Friday starts with a 2 hour drive, so this is the last late evening.",
+               "I have not confirmed the December times."],
+        book: "Book soon, online, so you have a set time." }
+    ]
+  },
+  {
+    tab: "Fri 11 Dec", label: "Day 6", title: "Back to Queenstown and the TSS Earnslaw", date: "Friday 11 December",
+    lead: "A 2 hour drive, a cruise on the steamship in the afternoon, and a Māori culture experience in the evening if you choose that one.",
+    facts: [["Driving", "170 km, about 2 hours"], ["Walking", "Minimal"], ["Stay", "Novotel Queenstown Lakeside, one night"]],
+    stops: [
+      { type: "drive", title: "Te Anau to Queenstown",
+        stats: [["Leave", "Approx 9:30am"], ["Duration", "About 2 hours"], ["Distance", "170 km"]],
+        text: ["Check out of the villa before 10:00am. You arrive at about 11:30am, so have lunch in Queenstown."] },
+      { type: "stay", title: "Novotel Queenstown Lakeside",
+        stats: [["Check-in", "3:00pm"], ["Check-out", "11:00am, Sat 12 Dec"], ["Where", "Corner of Earl St and Marine Parade"]],
+        text: ["Ask the hotel to hold your bags until check-in, or to check you in early. I do not know whether you added parking for this night."],
+        book: "Booked: Standard Room with Two Double Beds, Saver Rate (non-refundable). AUD 406.36 before any extras. I have not seen the confirmation number." },
+      { type: "cruise", title: "TSS Earnslaw steamship on Lake Wakatipu",
+        stats: [["Departs", "Afternoon, set when you book"], ["Length", "90 minutes"], ["Where", "Steamer Wharf, a walk from town"], ["Price", "NZ$129 adult, a November listing"]],
+        text: ["A coal-fired steamship launched in 1912, with views of Cecil Peak, Walter Peak and The Remarkables. You can visit the engine room. Passengers do not get off at Walter Peak on the standard cruise. The ship has steps. I do not know the December price or sailing times."],
+        book: "Book early, online. Check in at least 20 minutes before sailing." },
+      { type: "sight", title: "Māori culture experience (evening option)",
+        stats: [["Time", "Friday evening, or Saturday morning"], ["How long", "Not checked"], ["Where", "Not chosen yet"]],
+        text: ["I have not chosen this one yet. Two alcohol-free options appeared in search listings, and I have not checked dates or prices: a Māori cultural cruise on Lake Wakatipu aboard the Ngaroto, and Ahi Kā Haka and Hāngī, a haka performance with a meal listed at 5pm and 7pm. The Wana Haka tour is removed because it includes wine tastings. The 5pm session is possible on Friday. A Saturday evening session would clash with your flight."] }
+    ]
+  },
+  {
+    tab: "Sat 12 Dec", label: "Day 7", title: "Queenstown and fly to Auckland", date: "Saturday 12 December",
+    lead: "A relaxed day with one sight, then the car return and the evening flight.",
+    facts: [["Driving", "Arrowtown and the airport"], ["Walking", "Easy"], ["Stay", "Auckland Airport"]],
+    stops: [
+      { type: "sight", title: "Queenstown Gardens and lakefront",
+        stats: [["Time", "Morning, after check-out by 11:00am"], ["How long", "About 1 hour"], ["Where", "Queenstown Gardens"]],
+        text: ["A flat walk on the peninsula beside Lake Wakatipu. Ask the Novotel to keep your bags, and collect them on your way to the airport. You can visit Kiwi Birdlife Park here too if you skipped it on Sunday."] },
+      { type: "sight", title: "Arrowtown Chinese Settlement",
+        stats: [["Time", "Approx 1:00pm"], ["How long", "About 1 hour, plus time in the town"], ["Where", "Arrowtown, 20 to 30 minutes by car"]],
+        text: ["Restored huts from the gold-rush era. I have not checked opening hours."] },
+      { type: "drive", title: "Arrowtown to Queenstown Airport",
+        stats: [["Leave", "By 4:00pm"], ["Car return", "By 5:30pm"], ["On the way", "Bags from the hotel, then fuel"]],
+        text: ["Return the Budget car by 5:30pm, the time on your booking. I have not seen Budget's fuel policy, so check it before you return the car."] },
+      { type: "flight", title: "NZ628 Queenstown to Auckland",
+        stats: [["Departs", "8:30pm"], ["Arrives", "10:20pm"], ["Seats", "34A, 34B, 34C"]],
+        text: ["Your booking says check-in closes at 7:30pm."] },
+      { type: "stay", title: "Hotel near Auckland Airport",
+        stats: [["Window", "10:20pm to 9:00am"], ["Gap", "10 hours 40 minutes"], ["Hotel", "Not booked"]],
+        text: ["Ask Air New Zealand whether your bags are checked through to Sydney. If not, you collect them in Auckland and take them to the hotel. I have not checked hotels, prices or shuttle times."],
+        book: "Not booked yet. Book a room near the airport. It is the one item with no booking." }
+    ]
+  },
+  {
+    tab: "Sun 13 Dec", label: "Day 8", title: "Fly home to Sydney", date: "Sunday 13 December",
+    lead: "The flight home leaves Auckland at 9:00am.",
+    facts: [["Flight time", "3 hours 35 minutes"], ["Bags", "3 x 23 kg each"], ["Check-in", "Not shown on your booking"]],
+    stops: [
+      { type: "flight", title: "NZ103 Auckland to Sydney (Kingsford Smith)",
+        stats: [["Departs", "9:00am"], ["Arrives", "10:35am"], ["Seats", "Not shown on your booking"]],
+        text: ["The booking does not show a check-in closing time or seat numbers for this flight. Check both with Air New Zealand."] }
+    ]
+  },
+  {
+    tab: "Bookings", label: "Before you go", title: "Bookings and checks", date: "What to book and what to check",
+    custom: true
+  }
+];
+
+var BOOKINGS = '' +
+'<div class="box"><h3>Booked</h3><ul>' +
+'<li><b>Hire car:</b> Budget at Queenstown Airport, pick-up Sunday 6 December at 9:00am and return Saturday 12 December at 5:30pm. Intermediate SUV (Mitsubishi Outlander or similar), unlimited kilometres, prepaid NZ$725.79. Reference 07616239AU1. Only you are listed as a driver. You declined the excess reduction and the zero excess option, so you pay for damage up to the excess, and I have not seen the amount. Cancelling at least 24 hours before pick-up costs up to NZ$86.25, and within 24 hours up to NZ$172.50. A no-show forfeits the whole amount, and an early return gets no refund.</li>' +
+'<li><b>Queenstown, Sunday 6 December:</b> Novotel Queenstown Lakeside, one night, Standard Room with Two Double Beds, Saver Rate (non-refundable, paid online). AUD 413.53 at checkout, including AUD 49.45 for parking (NZD 501.75). Check-in 3:00pm, check-out 11:00am.</li>' +
+'<li><b>Te Anau, Monday 7 to Friday 11 December:</b> Distinction Te Anau Hotel and Villas, Deluxe Two Bedroom Villa, four nights with breakfast, on the 3 Nights B&amp;B Save 20% deal (non-refundable). NZ$2,342.40. Booking ID DIS-468195. Check-in from 2:00pm, check-out before 10:00am. You asked for the king and two singles bedding, which is not guaranteed.</li>' +
+'<li><b>Queenstown, Friday 11 December:</b> Novotel Queenstown Lakeside, one night, Standard Room with Two Double Beds, Saver Rate (non-refundable). AUD 406.36 before any extras. I have not seen the Novotel confirmation numbers.</li>' +
+'</ul></div>' +
+'<div class="box"><h3>Book these next, in this order</h3><ol>' +
+'<li>The Milford Sound cruise for Tuesday 8 December, with free cancellation, so a closed road costs you nothing.</li>' +
+'<li>The Doubtful Sound cruise for Wednesday 9 December, from Te Anau.</li>' +
+'<li>The TSS Earnslaw cruise on Friday 11 December, the Te Anau Glowworm Caves trip on Thursday 10 December, and a Māori culture experience on Friday evening or Saturday morning.</li>' +
+'</ol><p>Also book a room near Auckland Airport for Saturday 12 December. It is less urgent than the items above.</p></div>' +
+'<div class="box"><h3>Before you fly</h3><ul>' +
+'<li>Australian passport holders need no visa and no NZeTA. Check each passport&#39;s expiry date against your travel dates and the airline&#39;s conditions.</li>' +
+'<li>Each of you completes a free New Zealand Traveller Declaration before you reach passport control. Do it before you board.</li>' +
+'<li>Declare used hiking boots and other outdoor gear. Clean them before you pack them.</li>' +
+'<li>Ask the Novotel for early check-in on Sunday 6 December, and to hold your bags on Friday 11 and Saturday 12 December.</li>' +
+'<li>Find the excess amount in Budget&#39;s rental terms, and check whether your travel insurance or credit card covers it.</li>' +
+'<li>Bring the driving licence and the credit card used for the car booking. The name on both must match the booking.</li>' +
+'<li>Check that your Distinction confirmation email shows 3 adults and the bedding you asked for. If not, email reservations@distinctionteanau.co.nz with the booking ID.</li>' +
+'</ul></div>' +
+'<div class="box"><h3>Check before each driving day</h3><ul>' +
+'<li>Milford Road status at highwayinfo.govt.nz or on 0800 44 44 49. Milford Lodge says the road usually closes on some days each year because of weather, avalanches, slips or flooding.</li>' +
+'</ul></div>' +
+'<div class="box warn"><h3>If the Milford Road is closed on Tuesday</h3>' +
+'<p>Move the Milford cruise to Wednesday 9 December and the Doubtful Sound cruise to Thursday 10 December, and drop the glowworm caves. You do not need to change your accommodation, because all four Te Anau nights are already booked. If Doubtful Sound is cancelled instead, move it to Thursday.</p></div>' +
+'<div class="box"><h3>Not confirmed</h3><ul>' +
+'<li>Which Māori experience to book. I have not chosen one, and I have not opened or checked the two listings above. I found no other Māori experience on this route, and Ko Tāne is in Christchurch.</li>' +
+'<li>Opening hours, sailing times and prices for Kiwi Birdlife Park, the TSS Earnslaw, Te Anau Bird Sanctuary (including the takahē feeding time), the Glowworm Caves (including the 7:00pm departure), the Doubtful Sound cruise and the Arrowtown Chinese Settlement.</li>' +
+'<li>Sunday hours and vegan options at the Frankton breakfast places, and whether any of them is quiet.</li>' +
+'<li>Whether the Novotel and the Te Anau villa can check you in early or keep your bags, and whether the villa has any view. Its page does not describe one.</li>' +
+'<li>The Novotel confirmation numbers, whether the Friday night includes parking, and the bedding setup the villa gives you.</li>' +
+'<li>The excess amount and the fuel policy for the Budget car.</li>' +
+'<li>Overnight opening times for the Air New Zealand transfer desk and the domestic check-in in Auckland.</li>' +
+'<li>Whether your bags are checked through to Queenstown on Sunday morning and to Sydney on Sunday 13 December. Auckland Airport says you must collect them after an international arrival in any case.</li>' +
+'<li>The rule that used hiking boots must be declared comes from a travel blog. Check biosecurity.govt.nz for the cleaning standard.</li>' +
+'<li>Aoraki/Mount Cook is not in this plan. The sources disagreed on whether the Hooker Valley Track is partly closed, and the drive is long, so check DOC if you want to add it.</li>' +
+'<li>Hotel names, prices and shuttle times near Auckland Airport, and the price of every item above.</li>' +
+'</ul></div>' +
+'<div class="footer"><h3>Sources</h3><p>Booking details come from the Budget confirmation and the Distinction and Novotel booking screens you sent me.</p><p style="margin-top:8px">Pages I opened:</p><ul>' +
+'<li><a href="https://www.distinctionhotelsteanau.co.nz/teanau-hotel-accommodation/deluxe-two-bedroom-villa">Deluxe Two Bedroom Villa (Distinction Te Anau)</a></li>' +
+'<li><a href="https://www.fiordland.org.nz/plan/getting-to-fiordland/">Getting to Fiordland</a></li>' +
+'<li><a href="https://aucklandairport.co.nz/transport/travel-between-terminals">Travel between terminals (Auckland Airport)</a></li>' +
+'<li><a href="https://www.doc.govt.nz/hooker-valley-track">Hooker Valley Track (DOC)</a></li>' +
+'</ul><p style="margin-top:8px">Search results I did not open: ' +
+'<a href="https://milfordlodge.com/articles/milford-road-latest-updates">Milford Lodge</a>, ' +
+'<a href="https://www.immigration.govt.nz/new-zealand-visas/already-have-a-visa/managing-your-visa-and-passport/details-page-for-passport-sticker/visa/australian-resident-visa">Immigration NZ: Australian Resident Visa</a>, ' +
+'<a href="https://www.customs.govt.nz/travel-to-and-from-new-zealand/travel-by-air">NZ Customs: travel by air</a>, ' +
+'<a href="https://queenstownairport.co.nz/transport/rental-cars">Queenstown Airport: rental cars</a>, ' +
+'<a href="https://realnz.com/en/experiences/cruises/tss-earnslaw-lake-cruises">RealNZ: TSS Earnslaw</a>, ' +
+'<a href="https://realnz.com/en/experiences/cruises/doubtful-sound-wilderness-cruises/doubtful-sound-wilderness-cruises">RealNZ: Doubtful Sound</a>.</p></div>';
+
+var SVG = function (inner) { return '<svg viewBox="0 0 24 24" aria-hidden="true">' + inner + '</svg>'; };
+
+var GROUPS = {
+  travel: { icon: SVG('<polygon points="3 11 22 2 13 21 11 13 3 11"/>') },
+  doing: { icon: SVG('<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>') },
+  eat: { icon: SVG('<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>') },
+  stay: { icon: SVG('<path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/>') }
+};
+
+var TYPES = {
+  flight: { label: "Flight", group: "travel" },
+  drive: { label: "Drive", group: "travel" },
+  transfer: { label: "Transfer", group: "travel" },
+  car: { label: "Hire car", group: "travel" },
+  sight: { label: "Sight", group: "doing" },
+  cruise: { label: "Cruise", group: "doing" },
+  meal: { label: "Meal", group: "eat" },
+  stay: { label: "Stay", group: "stay" }
+};
+
+var TOD = {
+  morning: { label: "Morning", range: "5am to noon", icon: SVG('<path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 6 4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/>') },
+  afternoon: { label: "Afternoon", range: "noon to 5pm", icon: SVG('<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>') },
+  evening: { label: "Evening", range: "5pm to 9pm", icon: SVG('<path d="M12 10V2"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m16 6-4 4-4-4"/><path d="M16 18a4 4 0 0 0-8 0"/>') },
+  night: { label: "Night", range: "9pm to 5am", icon: SVG('<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>') }
+};
+
+function todOf(v) {
+  var m = /(\d{1,2})(?::(\d{2}))?\s*(am|pm)/i.exec(v);
+  var best = null;
+  if (m) {
+    var h = parseInt(m[1], 10) % 12 + (m[3].toLowerCase() === 'pm' ? 12 : 0);
+    var name = h >= 5 && h < 12 ? 'morning' : h >= 12 && h < 17 ? 'afternoon' : h >= 17 && h < 21 ? 'evening' : 'night';
+    best = { idx: m.index, name: name };
+  }
+  [['morning', /morning/i], ['afternoon', /afternoon/i], ['evening', /evening/i]].forEach(function (w) {
+    var k = w[1].exec(v);
+    if (k && (!best || k.index < best.idx)) { best = { idx: k.index, name: w[0] }; }
+  });
+  return best ? best.name : null;
+}
+
+function esc(s) { return s; }
+
+function stopHtml(s) {
+  var t = TYPES[s.type];
+  var g = GROUPS[t.group];
+  var out = '<article class="card g-' + t.group + '">';
+  out += '<div class="card-head"><span class="icon">' + g.icon + '</span><div class="ttl"><span class="kind">' + t.label + '</span><h3>' + s.title + '</h3></div></div>';
+  if (s.stats) {
+    out += '<dl class="stats">';
+    s.stats.forEach(function (x) {
+      var k = todOf(x[1]);
+      var mark = k ? '<span class="tod tod-' + k + '" role="img" aria-label="' + TOD[k].label + '" title="' + TOD[k].label + '">' + TOD[k].icon + '</span>' : '';
+      out += '<div><dt>' + x[0] + '</dt><dd>' + mark + '<span>' + x[1] + '</span></dd></div>';
+    });
+    out += '</dl>';
+  }
+  (s.text || []).forEach(function (p) { out += '<p>' + p + '</p>'; });
+  if (s.book) { out += '<p class="book ' + (/^Booked/.test(s.book) ? 'done' : 'todo') + '">' + s.book + '</p>'; }
+  out += '</article>';
+  return out;
+}
+
+function legendHtml() {
+  var out = '<p class="legend"><span class="legend-title">Time of day</span>';
+  ['morning', 'afternoon', 'evening', 'night'].forEach(function (k) {
+    out += '<span class="legend-item"><span class="tod tod-' + k + '" aria-hidden="true">' + TOD[k].icon + '</span>' + TOD[k].label + ' <small>' + TOD[k].range + '</small></span>';
+  });
+  return out + '</p>';
+}
+
+function panelHtml(d, idx) {
+  var h = '<div class="ph"><h2>' + d.label + ': ' + d.title + '</h2><p class="date">' + d.date + '</p></div>';
+  if (d.custom) { return h + BOOKINGS; }
+  h += '<p class="lead">' + d.lead + '</p>';
+  h += '<dl class="snapshot">';
+  d.facts.forEach(function (f) { h += '<div><dt>' + f[0] + '</dt><dd>' + f[1] + '</dd></div>'; });
+  h += '</dl>';
+  h += legendHtml();
+  d.stops.forEach(function (s) { h += stopHtml(s); });
+  if (d.after) { h += '<p class="lead" style="margin-top:16px;font-size:0.9rem;color:#55556A">' + d.after + '</p>'; }
+  return h;
+}
+
+var tabsEl = document.getElementById('tabs');
+var panelsEl = document.getElementById('panels');
+
+DAYS.forEach(function (d, i) {
+  var b = document.createElement('button');
+  b.className = 'tab';
+  b.setAttribute('role', 'tab');
+  b.setAttribute('id', 'tab-' + i);
+  b.setAttribute('aria-controls', 'panel-' + i);
+  var tp = /^(\w{3}) (.+)$/.exec(d.tab);
+  b.innerHTML = (tp ? '<span class="t1">' + tp[1] + '</span><span class="t2">' + tp[2] + '</span>' : d.tab) + '<small>' + d.label + '</small>';
+  b.addEventListener('click', function () { show(i, true); });
+  b.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { show(Math.min(i + 1, DAYS.length - 1), true); document.getElementById('tab-' + Math.min(i + 1, DAYS.length - 1)).focus(); }
+    if (e.key === 'ArrowLeft') { show(Math.max(i - 1, 0), true); document.getElementById('tab-' + Math.max(i - 1, 0)).focus(); }
+  });
+  tabsEl.appendChild(b);
+
+  var p = document.createElement('section');
+  p.className = 'panel';
+  p.setAttribute('role', 'tabpanel');
+  p.setAttribute('id', 'panel-' + i);
+  p.setAttribute('aria-labelledby', 'tab-' + i);
+  p.innerHTML = panelHtml(d, i);
+  panelsEl.appendChild(p);
+});
+
+function show(n, scroll) {
+  DAYS.forEach(function (d, i) {
+    var t = document.getElementById('tab-' + i);
+    var p = document.getElementById('panel-' + i);
+    var on = i === n;
+    t.setAttribute('aria-selected', on ? 'true' : 'false');
+    t.setAttribute('tabindex', on ? '0' : '-1');
+    if (on) { p.removeAttribute('hidden'); } else { p.setAttribute('hidden', ''); }
+  });
+  try { history.replaceState(null, '', '#day' + (n + 1)); } catch (e) {}
+  if (scroll) { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  var active = document.getElementById('tab-' + n);
+  if (active && active.scrollIntoView) { active.scrollIntoView({ block: 'nearest', inline: 'center' }); }
+}
+
+var start = 0;
+var m = /^#day(\d+)$/.exec(location.hash || '');
+if (m) { start = Math.min(Math.max(parseInt(m[1], 10) - 1, 0), DAYS.length - 1); }
+show(start, false);
+</script>
+</body>
+</html>
