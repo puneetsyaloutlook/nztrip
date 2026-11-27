@@ -158,18 +158,25 @@ a { color: #376DA4; }
 <script>
 var DAYS = [
   {
-    tab: "Sun 6 Dec", label: "Day 1", title: "Arrive in Queenstown and rest", date: "Sunday 6 December",
-    lead: "You arrive after a night with little sleep. The plan is a sit-down breakfast, a nap as soon as the room is ready, and an early night.",
-    facts: [["Driving", "Airport to Frankton and town"], ["Walking", "Minimal"], ["Stay", "Novotel Queenstown Lakeside, one night"]],
+    tab: "Sat 5 Dec", label: "Day 0", title: "Drive to Sydney and fly to Auckland", date: "Saturday 5 December",
+    lead: "You drive from Canberra to Sydney Airport in the morning and take the evening flight. You land in Auckland just after midnight on Sunday.",
+    facts: [["Driving", "Canberra to Sydney Airport"], ["Flight", "NZ112, 7:25pm"], ["Stay", "Overnight flight"]],
     stops: [
       { type: "drive", title: "Drive from Canberra to Sydney Airport",
-        stats: [["Leave", "By 11:30am, Sat 5 Dec"], ["Distance", "About 285 km"], ["Drive time", "About 3 hours 10 minutes"], ["Parking from", "3:00pm"]],
+        stats: [["Leave", "By 11:30am"], ["Distance", "About 285 km"], ["Drive time", "About 3 hours 10 minutes"], ["Parking from", "3:00pm"]],
         text: ["Take the Federal Highway to Goulburn, then the Hume Motorway and the M5 to the airport. Sources give 280 to 285 km and about 3 hours without stops, so leaving by 11:30am allows for a break and Saturday traffic. Your parking starts at 3:00pm, and check-in for NZ112 closes at 5:55pm. I have not checked tolls or traffic.",
                "Charge the car fully before you leave. I have not checked whether the car park has chargers, and the car stays there for 8 nights."],
         book: "Parking: Sydney Airport International T1 P7, entry Sat 5 Dec at 3:00pm, exit Sun 13 Dec at 1:00pm, $173.14 after the promo code. I have not seen a payment confirmation, so check that it went through." },
       { type: "flight", title: "NZ112 Sydney (Kingsford Smith) to Auckland",
         stats: [["Departs", "Sat 5 Dec, 7:25pm"], ["Arrives", "Sun 6 Dec, 12:40am"], ["Check-in closes", "5:55pm"], ["Seats", "24A, 24B, 24C"]],
-        text: ["Your fare includes 1 checked bag of 23 kg and 1 carry-on bag of 7 kg for each of you. A vegan meal is requested for one traveller."] },
+        text: ["Your fare includes 1 checked bag of 23 kg and 1 carry-on bag of 7 kg for each of you. A vegan meal is requested for one traveller."] }
+    ]
+  },
+  {
+    tab: "Sun 6 Dec", label: "Day 1", title: "Arrive in Queenstown and rest", date: "Sunday 6 December",
+    lead: "You arrive after a night with little sleep. The plan is a sit-down breakfast, a nap as soon as the room is ready, and an early night.",
+    facts: [["Driving", "Airport to Frankton and town"], ["Walking", "Minimal"], ["Stay", "Novotel Queenstown Lakeside, one night"]],
+    stops: [
       { type: "transfer", title: "Connection at Auckland Airport",
         stats: [["Window", "12:40am to 6:30am"], ["Gap", "5 hours 50 minutes"], ["NZ611 check-in closes", "6:00am"]],
         text: ["Collect your bags, clear customs and biosecurity, then go to the Air New Zealand domestic transfer desk on the ground floor of the international terminal. If it is closed, walk the 950 m covered walkway to the domestic terminal, which takes 10 to 15 minutes. The free bus runs only from 5am.",
@@ -502,7 +509,7 @@ function show(n, scroll) {
     t.setAttribute('tabindex', on ? '0' : '-1');
     if (on) { p.removeAttribute('hidden'); } else { p.setAttribute('hidden', ''); }
   });
-  try { history.replaceState(null, '', '#day' + (n + 1)); } catch (e) {}
+  try { history.replaceState(null, '', '#day' + n); } catch (e) {}
   if (scroll) { window.scrollTo({ top: 0, behavior: 'smooth' }); }
   var active = document.getElementById('tab-' + n);
   if (active && active.scrollIntoView) { active.scrollIntoView({ block: 'nearest', inline: 'center' }); }
@@ -510,7 +517,7 @@ function show(n, scroll) {
 
 var start = 0;
 var m = /^#day(\d+)$/.exec(location.hash || '');
-if (m) { start = Math.min(Math.max(parseInt(m[1], 10) - 1, 0), DAYS.length - 1); }
+if (m) { start = Math.min(Math.max(parseInt(m[1], 10), 0), DAYS.length - 1); }
 show(start, false);
 </script>
 </body>
