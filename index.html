@@ -60,6 +60,13 @@ a { color: #376DA4; }
 .ph { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 12px; margin-bottom: 10px; }
 .panel h2 { font-size: 1.5rem; }
 .panel .date { font-size: 0.92rem; color: #55556A; }
+.hero { position: relative; height: 210px; border-radius: 12px; overflow: hidden; margin-bottom: 12px; background: #1D6068; box-shadow: 0 1px 3px rgba(16,16,32,0.12); }
+.hero svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,24,30,0.78) 0%, rgba(10,24,30,0.45) 38%, rgba(10,24,30,0) 70%); }
+.hero-text { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 16px 20px 14px; color: #fff; }
+.hero-day { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 9px; border-radius: 99px; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.45); }
+.hero-text h2 { font-size: 1.65rem; margin-top: 6px; text-shadow: 0 1px 4px rgba(0,0,0,0.45); }
+.hero-text .date { color: rgba(255,255,255,0.92); font-size: 0.92rem; margin-top: 2px; }
 .lead { max-width: 76ch; margin-bottom: 14px; font-size: 1rem; }
 
 .snapshot {
@@ -144,6 +151,9 @@ a { color: #376DA4; }
 .footer ul { padding-left: 20px; }
 
 @media (max-width: 640px) {
+  .hero { height: 215px; }
+  .hero-text { padding: 12px 14px 12px; }
+  .hero-text h2 { font-size: 1.3rem; }
   .header { padding: 16px 16px 10px; }
   .header h1 { font-size: 1.4rem; }
   .strip { padding: 8px 16px; }
@@ -156,6 +166,7 @@ a { color: #376DA4; }
   .panel[hidden] { display: block; }
   .panel { break-before: page; }
   body { background: #fff; }
+  .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 </style>
 </head>
@@ -432,9 +443,133 @@ function legendHtml() {
   return out + '</p>';
 }
 
+var PLANE = '<path d="M-30 0 Q-30 -5 -20 -5 L24 -5 Q34 -5 38 0 Q34 5 24 5 L-20 5 Q-30 5 -30 0Z"/><path d="M-4 -3 L-16 -26 L-7 -26 L16 -3Z"/><path d="M-4 3 L-16 20 L-7 20 L16 3Z" opacity="0.8"/><path d="M-28 -4 L-35 -15 L-26 -15 L-17 -4Z"/>';
+function plane(x, y, sc, rot, col) { return '<g transform="translate(' + x + ' ' + y + ') rotate(' + rot + ') scale(' + sc + ')" fill="' + col + '">' + PLANE + '</g>'; }
+function sky(id, a, b) { return '<defs><linearGradient id="sky' + id + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + a + '"/><stop offset="1" stop-color="' + b + '"/></linearGradient></defs><rect width="780" height="220" fill="url(#sky' + id + ')"/>'; }
+function water(y, col, line) {
+  var o = '<rect x="0" y="' + y + '" width="780" height="' + (220 - y) + '" fill="' + col + '"/>';
+  for (var i = 0; i < 9; i++) { o += '<rect x="' + ((i * 97 + 20) % 700) + '" y="' + (y + 6 + i * 5) + '" width="' + (50 + (i % 3) * 30) + '" height="1.5" rx="1" fill="' + line + '" opacity="0.5"/>'; }
+  return o;
+}
+function tree(x, y, h, col) { return '<rect x="' + (x - 1.5) + '" y="' + (y - h * 0.3) + '" width="3" height="' + (h * 0.3) + '" fill="#4A3B2E"/><circle cx="' + x + '" cy="' + (y - h * 0.6) + '" r="' + (h * 0.38) + '" fill="' + col + '"/>'; }
+
+var SCENES = {
+  road: function (i) {
+    var o = sky(i, '#F6B778', '#FBE7C8');
+    o += '<circle cx="610" cy="120" r="34" fill="#FFF3D6" opacity="0.9"/>';
+    o += '<path d="M0 150 Q120 110 240 140 T480 135 T780 130 L780 220 L0 220Z" fill="#9DB18A"/>';
+    o += '<path d="M0 175 Q160 140 320 165 T640 160 T780 160 L780 220 L0 220Z" fill="#6F8C63"/>';
+    o += '<path d="M330 220 L405 160 L425 160 L560 220Z" fill="#3A3F4B"/>';
+    o += '<path d="M440 218 L416 164" stroke="#F2E6C8" stroke-width="3" stroke-dasharray="10 9"/>';
+    o += plane(380, 52, 1.1, -12, '#FFFFFF') + '<path d="M260 74 Q310 66 350 58" stroke="#fff" stroke-width="3" opacity="0.5" fill="none" stroke-linecap="round"/>';
+    return o;
+  },
+  queenstown: function (i) {
+    var o = sky(i, '#9CC3E2', '#E6F0F7');
+    o += '<path d="M0 140 L60 100 L110 120 L190 62 L250 108 L330 55 L400 105 L470 78 L560 125 L640 82 L720 115 L780 95 L780 220 L0 220Z" fill="#8FA9C4"/>';
+    o += '<path d="M190 62 L205 78 L190 74 L178 82Z M330 55 L348 76 L330 70 L316 80Z M640 82 L655 98 L640 94 L628 100Z" fill="#fff" opacity="0.85"/>';
+    o += '<path d="M0 172 L90 130 L160 152 L260 112 L350 152 L450 124 L540 156 L650 124 L780 160 L780 220 L0 220Z" fill="#5F7F9E"/>';
+    o += water(178, '#3E7C8C', '#A9D3D8');
+    o += '<path d="M560 205 L640 205 L630 212 L570 212Z" fill="#fff" opacity="0.9"/>';
+    return o;
+  },
+  teanau: function (i) {
+    var o = sky(i, '#A9D0E6', '#EAF4F0');
+    o += '<path d="M0 135 Q100 90 220 125 T450 118 T700 105 T780 118 L780 220 L0 220Z" fill="#A7BFA0"/>';
+    o += '<path d="M0 160 Q150 130 300 155 T600 148 T780 150 L780 220 L0 220Z" fill="#6E9770"/>';
+    o += water(172, '#3F8AA0', '#B8DDE6');
+    o += '<path d="M0 205 Q120 190 260 210 L260 220 L0 220Z" fill="#4E7D55"/>';
+    // takahe style bird: round teal body, red beak
+    o += '<g transform="translate(520 170)"><ellipse cx="0" cy="0" rx="26" ry="19" fill="#2F6F86"/><path d="M-20 -6 Q-30 -22 -14 -30 Q8 -30 14 -12Z" fill="#3E8F7A"/><circle cx="22" cy="-14" r="10" fill="#2F6F86"/><path d="M30 -16 L48 -10 L31 -6Z" fill="#C8372D"/><circle cx="25" cy="-16" r="1.8" fill="#fff"/><rect x="-6" y="16" width="3" height="16" fill="#C8372D"/><rect x="6" y="16" width="3" height="16" fill="#C8372D"/></g>';
+    o += '<path d="M510 202 L540 202" stroke="#2E5E3B" stroke-width="2"/>';
+    return o;
+  },
+  milford: function (i) {
+    var o = sky(i, '#7FA3BA', '#D3E0E6');
+    o += '<path d="M0 120 L110 66 L200 108 L270 200 L0 200Z" fill="#3F5566"/>';
+    o += '<path d="M500 200 L590 92 L690 58 L780 108 L780 200Z" fill="#3F5566"/>';
+    o += '<path d="M255 200 L392 28 L526 200Z" fill="#566E80"/>';
+    o += '<path d="M392 28 L420 66 L396 58 L384 72 L370 56Z" fill="#fff" opacity="0.8"/>';
+    o += '<path d="M392 28 L526 200 L440 200Z" fill="#445A6B" opacity="0.7"/>';
+    o += '<path d="M640 78 L640 178" stroke="#fff" stroke-width="3.5" opacity="0.85" stroke-linecap="round"/><path d="M652 96 L652 178" stroke="#fff" stroke-width="2" opacity="0.7" stroke-linecap="round"/>';
+    o += water(190, '#27505E', '#6E9AAA');
+    o += '<path d="M404 196 L452 196 L444 207 L412 207Z" fill="#fff"/><rect x="418" y="187" width="22" height="9" fill="#EDEDED"/><rect x="430" y="181" width="3" height="6" fill="#B5482F"/>';
+    return o;
+  },
+  doubtful: function (i) {
+    var o = sky(i, '#B8CBC9', '#E8EEEA');
+    o += '<path d="M0 130 L90 80 L190 110 L300 62 L420 108 L520 70 L640 112 L780 78 L780 220 L0 220Z" fill="#9DB4AE" opacity="0.7"/>';
+    o += '<path d="M0 160 L120 110 L240 148 L380 100 L520 152 L660 108 L780 150 L780 220 L0 220Z" fill="#6F8F8A" opacity="0.9"/>';
+    o += '<rect x="0" y="120" width="780" height="40" fill="#EEF3F0" opacity="0.45"/>';
+    o += '<path d="M0 190 L140 150 L300 184 L460 140 L620 186 L780 160 L780 220 L0 220Z" fill="#46665F"/>';
+    o += water(188, '#2F5A5C', '#7FAAA5');
+    o += '<ellipse cx="300" cy="150" rx="260" ry="18" fill="#fff" opacity="0.28"/>';
+    o += '<path d="M520 198 L568 198 L560 208 L528 208Z" fill="#fff"/><rect x="534" y="190" width="22" height="8" fill="#EDEDED"/>';
+    o += '<path d="M200 200 Q212 186 224 200Z" fill="#2B3E48"/>';
+    return o;
+  },
+  glowworm: function (i) {
+    var o = '<defs><linearGradient id="sky' + i + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#08181E"/><stop offset="1" stop-color="#1D5560"/></linearGradient></defs><rect width="780" height="220" fill="url(#sky' + i + ')"/>';
+    o += '<path d="M0 0 H780 V46 Q660 96 520 62 Q370 124 210 72 Q90 104 0 62Z" fill="#05110F"/>';
+    var n = 46, k;
+    for (k = 0; k < n; k++) {
+      var x = (k * 53 + 17) % 780, y = 20 + ((k * 37) % 86) * 0.62 + (x > 200 && x < 520 ? 22 : 0) * 0.5;
+      var r = 1.4 + (k % 4) * 0.7;
+      o += '<circle cx="' + x + '" cy="' + y.toFixed(1) + '" r="' + (r * 3.2).toFixed(1) + '" fill="#8FF5DE" opacity="0.14"/><circle cx="' + x + '" cy="' + y.toFixed(1) + '" r="' + r.toFixed(1) + '" fill="#C9FFF0"/>';
+      o += '<circle cx="' + x + '" cy="' + (214 - (y * 0.7)).toFixed(1) + '" r="' + (r * 0.8).toFixed(1) + '" fill="#8FF5DE" opacity="0.35"/>';
+    }
+    o += '<rect x="0" y="176" width="780" height="44" fill="#0A2A30" opacity="0.7"/>';
+    o += '<path d="M300 190 L360 190 L352 199 L308 199Z" fill="#0A1C22"/>';
+    return o;
+  },
+  steamship: function (i) {
+    var o = sky(i, '#9BC4E4', '#EAF2F4');
+    o += '<path d="M0 150 L80 108 L150 134 L250 82 L330 128 L430 96 L520 136 L620 90 L700 126 L780 104 L780 220 L0 220Z" fill="#8CA8C2"/>';
+    o += '<path d="M0 176 L110 138 L220 164 L360 130 L500 166 L640 136 L780 168 L780 220 L0 220Z" fill="#60809C"/>';
+    o += water(164, '#3F7E90', '#A9D3D8');
+    o += '<g transform="translate(300 -28)"><path d="M10 168 L170 168 L152 192 L28 192Z" fill="#2B2B3A"/><rect x="26" y="146" width="128" height="22" fill="#F4F2EC"/><rect x="48" y="130" width="64" height="16" fill="#E6E2D8"/><rect x="82" y="104" width="16" height="28" fill="#B5482F"/><rect x="82" y="104" width="16" height="5" fill="#222"/>';
+    o += '<circle cx="86" cy="92" r="9" fill="#fff" opacity="0.8"/><circle cx="102" cy="78" r="12" fill="#fff" opacity="0.65"/><circle cx="124" cy="68" r="15" fill="#fff" opacity="0.5"/></g>';
+    return o;
+  },
+  gardens: function (i) {
+    var o = sky(i, '#F2B98A', '#FCEBD3');
+    o += '<circle cx="250" cy="104" r="30" fill="#FFF1D2" opacity="0.9"/>';
+    o += '<path d="M0 150 L90 104 L180 138 L290 88 L380 134 L500 100 L610 140 L700 112 L780 134 L780 220 L0 220Z" fill="#B3A3B4"/>';
+    o += '<path d="M0 172 L120 140 L250 166 L400 136 L560 168 L700 142 L780 164 L780 220 L0 220Z" fill="#8A7FA0"/>';
+    o += water(180, '#5E8CA0', '#F2D3B5');
+    o += '<path d="M420 196 Q470 170 560 176 Q640 182 700 196 L700 220 L420 220Z" fill="#6E9770"/>';
+    o += tree(470, 188, 34, '#3F7048') + tree(510, 184, 40, '#4E8057') + tree(560, 184, 36, '#3F7048') + tree(610, 188, 32, '#4E8057') + tree(650, 192, 30, '#3F7048');
+    o += plane(500, 46, 0.9, -8, '#FFFFFF');
+    return o;
+  },
+  clouds: function (i) {
+    var o = sky(i, '#5A9AD6', '#BFDDF2');
+    o += '<circle cx="560" cy="60" r="28" fill="#FFF6D8"/><circle cx="560" cy="60" r="44" fill="#FFF6D8" opacity="0.25"/>';
+    o += '<g fill="#fff"><ellipse cx="120" cy="196" rx="150" ry="40"/><ellipse cx="300" cy="206" rx="170" ry="42"/><ellipse cx="520" cy="198" rx="160" ry="44"/><ellipse cx="700" cy="206" rx="150" ry="40"/></g>';
+    o += '<g fill="#fff" opacity="0.75"><ellipse cx="90" cy="70" rx="60" ry="14"/><ellipse cx="130" cy="62" rx="40" ry="12"/><ellipse cx="420" cy="40" rx="70" ry="13"/></g>';
+    o += plane(360, 62, 1.4, -6, '#F4F6F9');
+    return o;
+  }
+};
+var DAY_SCENE = ['road', 'queenstown', 'teanau', 'milford', 'doubtful', 'glowworm', 'steamship', 'gardens', 'clouds'];
+
+function heroHtml(d, idx) {
+  var key = DAY_SCENE[idx];
+  var svg = '<svg viewBox="0 0 780 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">' + SCENES[key](idx) + '</svg>';
+  return '<div class="hero">' + svg + '<div class="hero-text"><span class="hero-day">' + d.label + '</span><h2>' + d.title + '</h2><p class="date">' + d.date + '</p></div></div>';
+}
+function factsHtml(d) {
+  if (!d.facts) { return ''; }
+  var h = '<dl class="snapshot">';
+  d.facts.forEach(function (f) { h += '<div><dt>' + f[0] + '</dt><dd>' + f[1] + '</dd></div>'; });
+  return h + '</dl>';
+}
+
 function panelHtml(d, idx) {
-  var h = '<div class="ph"><h2>' + d.label + ': ' + d.title + '</h2><p class="date">' + d.date + '</p></div>';
-  if (d.custom) { return h + BOOKINGS; }
+  if (d.custom) {
+    return '<div class="ph"><h2>' + d.label + ': ' + d.title + '</h2><p class="date">' + d.date + '</p></div>' + BOOKINGS;
+  }
+  var h = heroHtml(d, idx) + factsHtml(d);
   h += '<p class="lead">' + d.lead + '</p>';
   d.stops.forEach(function (s) { h += stopHtml(s); });
   if (d.after) { h += '<p class="lead" style="margin-top:16px;font-size:0.9rem;color:#55556A">' + d.after + '</p>'; }
