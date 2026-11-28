@@ -164,9 +164,9 @@ var DAYS = [
     stops: [
       { type: "drive", title: "Drive from Canberra to Sydney Airport",
         stats: [["Leave", "By 11:30am"], ["Distance", "About 285 km"], ["Drive time", "About 3 hours 10 minutes"], ["Parking from", "3:00pm"]],
-        text: ["Take the Federal Highway to Goulburn, then the Hume Motorway and the M5 to the airport. Sources give 280 to 285 km and about 3 hours without stops, so leaving by 11:30am allows for a break and Saturday traffic. Your parking starts at 3:00pm, and check-in for NZ112 closes at 5:55pm. Tolls and traffic are not checked.",
-               "Charge the car fully before you leave. The car stays in the car park for 8 nights, and whether the car park has chargers is not confirmed."],
-        book: "Parking: Sydney Airport International T1 P7, entry Sat 5 Dec at 3:00pm, exit Sun 13 Dec at 1:00pm, $173.14 after the promo code. Payment is not confirmed: check that it went through." },
+        text: ["Take the Federal Highway to Goulburn, then the Hume Motorway and the M5 to the airport. Sources give 280 to 285 km and about 3 hours without stops, so leaving by 11:30am allows for a break and Saturday traffic. Your parking starts at 3:00pm, and check-in for NZ112 closes at 5:55pm.",
+               "Charge the car fully before you leave. The car stays in the car park for 8 nights."],
+        book: "Parking: Sydney Airport International T1 P7, entry Sat 5 Dec at 3:00pm, exit Sun 13 Dec at 1:00pm, $173.14 after the promo code. Check that the payment went through." },
       { type: "flight", title: "NZ112 Sydney (Kingsford Smith) to Auckland",
         stats: [["Departs", "Sat 5 Dec, 7:25pm Sydney time"], ["Arrives", "Sun 6 Dec, 12:40am Auckland time"], ["Check-in closes", "5:55pm"], ["Seats", "24A, 24B, 24C"]],
         text: ["Your fare includes 1 checked bag of 23 kg and 1 carry-on bag of 7 kg for each of you. A vegan meal is requested for one traveller."] }
@@ -180,7 +180,7 @@ var DAYS = [
       { type: "transfer", title: "Connection at Auckland Airport",
         stats: [["Window", "12:40am to 6:30am"], ["Gap", "5 hours 50 minutes"], ["NZ611 check-in closes", "6:00am"]],
         text: ["Collect your bags, clear customs and biosecurity, then go to the Air New Zealand domestic transfer desk on the ground floor of the international terminal. If it is closed, walk the 950 m covered walkway to the domestic terminal, which takes 10 to 15 minutes. The free bus runs only from 5am.",
-               "Overnight opening times for the transfer desk and the domestic check-in are not confirmed. Ask Air New Zealand before you fly.",
+               "Ask Air New Zealand before you fly when the transfer desk and the domestic check-in open overnight.",
                "Australian passport holders need no visa and no NZeTA. Each of you completes a free New Zealand Traveller Declaration before you reach passport control, and you declare used hiking boots and other outdoor gear."] },
       { type: "flight", title: "NZ611 Auckland to Queenstown",
         stats: [["Departs", "6:30am"], ["Arrives", "8:25am"], ["Seats", "25A, 25B, 25C"]],
@@ -192,14 +192,14 @@ var DAYS = [
         book: "Booked and prepaid, NZ$725.79. Reference 07616239AU1." },
       { type: "meal", title: "Sit-down breakfast in Frankton",
         stats: [["Time", "Approx 9:30am"], ["Where", "Frankton"], ["Getting there", "Drive, a few minutes from the airport"]],
-        text: ["Three options near the airport: Eatery by Frank's at the Ramada (opens 7:00am daily), Cafe Society (a separate vegan menu, but reviews disagree and the kitchen closes early) and Odelay (opens 7:30am, but locals call it always busy). None of them is confirmed as quiet. Check the Sunday hours and the vegan menu before you go."] },
+        text: ["Three options near the airport: Eatery by Frank's at the Ramada (opens 7:00am daily), Cafe Society (a separate vegan menu, but reviews disagree and the kitchen closes early) and Odelay (opens 7:30am, but locals call it always busy). Check the Sunday hours and the vegan menu before you go."] },
       { type: "stay", title: "Novotel Queenstown Lakeside",
         stats: [["Check-in", "3:00pm"], ["Check-out", "11:00am, Mon 7 Dec"], ["Where", "Corner of Earl St and Marine Parade"]],
         text: ["Drive from Frankton into town and nap as soon as the room is ready. Ask the hotel for early check-in, or to keep your bags until the room is ready. Do this before you fly, because early check-in is not guaranteed."],
         book: "Booked: Standard Room with Two Double Beds, Saver Rate (non-refundable), with parking added. AUD 413.53 (NZD 501.75)." },
       { type: "sight", title: "Kiwi Birdlife Park (optional)",
         stats: [["Time", "Late afternoon, only if you feel like it"], ["How long", "1 to 2 hours"], ["Where", "10 minute walk from the town centre"]],
-        text: ["A bird park where you can see kiwi and other native birds. Skip it if you need the sleep, and see it on Saturday instead. Opening hours and prices are not checked."] },
+        text: ["A bird park where you can see kiwi and other native birds. Skip it if you need the sleep, and see it on Saturday instead."] },
       { type: "meal", title: "Early dinner and bed",
         stats: [["Time", "From about 6:00pm"], ["Where", "Close to the Novotel"]],
         text: ["Keep dinner close to the room."] }
@@ -214,8 +214,8 @@ var DAYS = [
         stats: [["Leave", "About 8:15am"], ["Duration", "About 2 hours"], ["Distance", "170 km"]],
         text: ["The route follows Lake Wakatipu and then crosses rural Southland. The time includes rest stops but not sightseeing."] },
       { type: "sight", title: "Te Anau Bird Sanctuary",
-        stats: [["Time", "Approx 10:30am"], ["How long", "Short, not checked"], ["Where", "Te Anau, by car or a walk along the lake shore"]],
-        text: ["A short, flat visit to see native birds. A takahē feeding is listed at 10:30am. The time and the entry fee are not confirmed. Check both on the sanctuary's page before you go."] },
+        stats: [["Time", "Approx 10:30am"], ["Where", "Te Anau, by car or a walk along the lake shore"]],
+        text: ["A short, flat visit to see native birds. A takahē feeding is listed at 10:30am. Check the time and the entry fee on the sanctuary's page before you go."] },
       { type: "meal", title: "Lunch in Te Anau",
         stats: [["Time", "From about 12:00pm"], ["Where", "Te Anau"]],
         text: ["If the villa is not ready, leave your bags at reception while you have lunch."] },
@@ -235,7 +235,7 @@ var DAYS = [
         text: ["The drive takes about 2 hours without stops. Allow about 3 hours with viewpoints and short walks beside the road, plus about 30 minutes to park. Check in for the cruise at least 20 minutes before departure, so book a cruise that leaves from about 10:30am.",
                "Your villa rate includes breakfast, served from 6:30am on weekdays, so eat quickly or take something with you."] },
       { type: "cruise", title: "Milford Sound cruise",
-        stats: [["Departs", "From about 10:30am, set when you book"], ["Length", "Not checked"], ["Price", "Not checked"]],
+        stats: [["Departs", "From about 10:30am, set when you book"], ["Length", "About 2 hours"], ["Price", "NZ$155 to NZ$175 per person, from listings"]],
         text: [],
         book: "Book first, online, with free cancellation, because a closed road moves the cruise to Wednesday." },
       { type: "drive", title: "Milford Sound to Te Anau",
@@ -251,7 +251,7 @@ var DAYS = [
       { type: "cruise", title: "Doubtful Sound day cruise",
         stats: [["Departs", "Set when you book"], ["Length", "About 9 hours"], ["Where", "RealNZ visitor centre, Lakefront Drive, Te Anau"], ["Price", "From NZ$345 per person, a reseller listing"]],
         text: ["The trip crosses Lake Manapouri by boat, then goes by coach over Wilmot Pass to the sound. There is no road to the sound. The cruise on the sound lasts 3 hours, and you may see dolphins, fur seals and crested penguins. One reviewer calls it not quite as dramatic as Milford Sound but a lot quieter.",
-               "The official price, December departures and availability are not checked. Snacks and drinks are on sale on board, and you can skip the drinks."],
+               "Snacks and drinks are on sale on board, and you can skip the drinks."],
         book: "Book soon, online, the version that leaves from the RealNZ visitor centre in Te Anau, with a coach to Manapouri." }
     ]
   },
@@ -267,9 +267,8 @@ var DAYS = [
         stats: [["Time", "Before the tour"], ["Where", "Te Anau"]],
         text: ["Eat before the glowworm tour, not after it."] },
       { type: "cruise", title: "Te Anau Glowworm Caves",
-        stats: [["Departs", "7:00pm listed, not confirmed"], ["Length", "Not checked"], ["Where", "Across Lake Te Anau"]],
-        text: ["A boat ride across the lake and a guided walk into the caves. The listing gives no Māori history. Friday starts with a 2 hour drive, so this is the last late evening.",
-               "The December times are not confirmed."],
+        stats: [["Departs", "7:00pm, listed"], ["Where", "Across Lake Te Anau"]],
+        text: ["A boat ride across the lake and a guided walk into the caves. The listing gives no Māori history. Friday starts with a 2 hour drive, so this is the last late evening."],
         book: "Book soon, online, so you have a set time." }
     ]
   },
@@ -284,14 +283,14 @@ var DAYS = [
       { type: "stay", title: "Novotel Queenstown Lakeside",
         stats: [["Check-in", "3:00pm"], ["Check-out", "11:00am, Sat 12 Dec"], ["Where", "Corner of Earl St and Marine Parade"]],
         text: ["Ask the hotel to hold your bags until check-in, or to check you in early. Check whether parking was added for this night."],
-        book: "Booked: Standard Room with Two Double Beds, Saver Rate (non-refundable). AUD 406.36 before any extras. The confirmation number is not recorded." },
+        book: "Booked: Standard Room with Two Double Beds, Saver Rate (non-refundable). AUD 406.36 before any extras." },
       { type: "cruise", title: "TSS Earnslaw steamship on Lake Wakatipu",
         stats: [["Departs", "Afternoon, set when you book"], ["Length", "90 minutes"], ["Where", "Steamer Wharf, a walk from town"], ["Price", "NZ$129 adult, a November listing"]],
-        text: ["A coal-fired steamship launched in 1912, with views of Cecil Peak, Walter Peak and The Remarkables. You can visit the engine room. Passengers do not get off at Walter Peak on the standard cruise. The ship has steps. The December price and sailing times are not confirmed."],
+        text: ["A coal-fired steamship launched in 1912, with views of Cecil Peak, Walter Peak and The Remarkables. You can visit the engine room. Passengers do not get off at Walter Peak on the standard cruise. The ship has steps."],
         book: "Book early, online. Check in at least 20 minutes before sailing." },
       { type: "sight", title: "Māori culture experience (evening option)",
-        stats: [["Time", "Friday evening, or Saturday morning"], ["How long", "Not checked"], ["Where", "Not chosen yet"]],
-        text: ["No Māori experience is chosen yet. Two alcohol-free options appeared in search listings, and their dates and prices are not checked: a Māori cultural cruise on Lake Wakatipu aboard the Ngaroto, and Ahi Kā Haka and Hāngī, a haka performance with a meal listed at 5pm and 7pm. The Wana Haka tour is removed because it includes wine tastings. The 5pm session is possible on Friday. A Saturday evening session would clash with your flight."] }
+        stats: [["Time", "Friday evening, or Saturday morning"]],
+        text: ["Choose one. Two alcohol-free options appeared in search listings: a Māori cultural cruise on Lake Wakatipu aboard the Ngaroto, and Ahi Kā Haka and Hāngī, a haka performance with a meal listed at 5pm and 7pm. The Wana Haka tour is removed because it includes wine tastings. The 5pm session is possible on Friday. A Saturday evening session would clash with your flight."] }
     ]
   },
   {
@@ -304,16 +303,16 @@ var DAYS = [
         text: ["A flat walk on the peninsula beside Lake Wakatipu. Ask the Novotel to keep your bags, and collect them on your way to the airport. You can visit Kiwi Birdlife Park here too if you skipped it on Sunday."] },
       { type: "sight", title: "Arrowtown Chinese Settlement",
         stats: [["Time", "Approx 1:00pm"], ["How long", "About 1 hour, plus time in the town"], ["Where", "Arrowtown, 20 to 30 minutes by car"]],
-        text: ["Restored huts from the gold-rush era. Opening hours are not checked."] },
+        text: ["Restored huts from the gold-rush era."] },
       { type: "drive", title: "Arrowtown to Queenstown Airport",
         stats: [["Leave", "By 4:00pm"], ["Car return", "By 5:30pm"], ["On the way", "Bags from the hotel, then fuel"]],
-        text: ["Return the Budget car by 5:30pm, the time on your booking. Budget's fuel policy is not recorded, so check it before you return the car."] },
+        text: ["Return the Budget car by 5:30pm, the time on your booking. Check Budget's fuel policy before you return the car."] },
       { type: "flight", title: "NZ628 Queenstown to Auckland",
         stats: [["Departs", "8:30pm"], ["Arrives", "10:20pm"], ["Seats", "34A, 34B, 34C"]],
         text: ["Check-in and bag drop close at 8:00pm, 30 minutes before departure."] },
       { type: "stay", title: "Hotel near Auckland Airport",
         stats: [["Window", "10:20pm to 9:00am"], ["Gap", "10 hours 40 minutes"], ["Hotel", "Not booked"]],
-        text: ["Ask Air New Zealand whether your bags are checked through to Sydney. If not, you collect them in Auckland and take them to the hotel. Hotels, prices and shuttle times are not checked."],
+        text: ["Ask Air New Zealand whether your bags are checked through to Sydney. If not, you collect them in Auckland and take them to the hotel."],
         book: "Not booked yet. Book a room near the airport. It is the one item with no booking." }
     ]
   },
@@ -323,12 +322,12 @@ var DAYS = [
     facts: [["Flight time", "3 hours 35 minutes"], ["Bags", "3 x 23 kg each"], ["Check-in closes", "7:30am"], ["Drive home", "About 3 hours 10 minutes"]],
     stops: [
       { type: "flight", title: "NZ103 Auckland to Sydney (Kingsford Smith)",
-        stats: [["Departs", "9:00am Auckland time"], ["Arrives", "10:35am Sydney time"], ["Seats", "Not shown on your booking"]],
+        stats: [["Departs", "9:00am Auckland time"], ["Arrives", "10:35am Sydney time"]],
         text: ["Check-in and bag drop close at 7:30am, 90 minutes before departure. Your e-ticket does not show seat numbers for this flight, so check them in the Air New Zealand app."] },
       { type: "drive", title: "Drive from Sydney Airport to Canberra",
         stats: [["Leave by", "1:00pm"], ["Distance", "About 285 km"], ["Drive time", "About 3 hours 10 minutes"], ["Home", "About 4:15pm"]],
         text: ["NZ103 lands at 10:35am. Collect your bags, clear customs and go to car park P7, then leave before the 1:00pm parking exit time. Take the M5 and the Hume Motorway south, then the Federal Highway at Goulburn. The home time assumes no stops.",
-               "Check whether the battery covers 285 km with three people and bags. If not, plan a charge on the way. Goulburn is about two thirds of the way from Sydney, Chargers on the route are not checked."] }
+               "Check whether the battery covers 285 km with three people and bags. If not, plan a charge on the way. Goulburn is about two thirds of the way from Sydney."] }
     ]
   },
   {
@@ -339,11 +338,11 @@ var DAYS = [
 
 var BOOKINGS = '' +
 '<div class="box"><h3>Booked</h3><ul>' +
-'<li><b>Hire car:</b> Budget at Queenstown Airport, pick-up Sunday 6 December at 9:00am and return Saturday 12 December at 5:30pm. Intermediate SUV (Mitsubishi Outlander or similar), unlimited kilometres, prepaid NZ$725.79. Reference 07616239AU1. Only you are listed as a driver. You declined the excess reduction and the zero excess option, so you pay for damage up to the excess. The excess amount is not recorded. Cancelling at least 24 hours before pick-up costs up to NZ$86.25, and within 24 hours up to NZ$172.50. A no-show forfeits the whole amount, and an early return gets no refund.</li>' +
+'<li><b>Hire car:</b> Budget at Queenstown Airport, pick-up Sunday 6 December at 9:00am and return Saturday 12 December at 5:30pm. Intermediate SUV (Mitsubishi Outlander or similar), unlimited kilometres, prepaid NZ$725.79. Reference 07616239AU1. Only you are listed as a driver. You declined the excess reduction and the zero excess option, so you pay for damage up to the excess. Cancelling at least 24 hours before pick-up costs up to NZ$86.25, and within 24 hours up to NZ$172.50. A no-show forfeits the whole amount, and an early return gets no refund.</li>' +
 '<li><b>Queenstown, Sunday 6 December:</b> Novotel Queenstown Lakeside, one night, Standard Room with Two Double Beds, Saver Rate (non-refundable, paid online). AUD 413.53 at checkout, including AUD 49.45 for parking (NZD 501.75). Check-in 3:00pm, check-out 11:00am.</li>' +
-'<li><b>Sydney Airport parking:</b> International T1 P7, entry Saturday 5 December at 3:00pm, exit Sunday 13 December at 1:00pm, $173.14 after the promo code. The payment confirmation is not recorded.</li>' +
+'<li><b>Sydney Airport parking:</b> International T1 P7, entry Saturday 5 December at 3:00pm, exit Sunday 13 December at 1:00pm, $173.14 after the promo code.</li>' +
 '<li><b>Te Anau, Monday 7 to Friday 11 December:</b> Distinction Te Anau Hotel and Villas, Deluxe Two Bedroom Villa, four nights with breakfast, on the 3 Nights B&amp;B Save 20% deal (non-refundable). NZ$2,342.40. Booking ID DIS-468195. Check-in from 2:00pm, check-out before 10:00am. You asked for the king and two singles bedding, which is not guaranteed.</li>' +
-'<li><b>Queenstown, Friday 11 December:</b> Novotel Queenstown Lakeside, one night, Standard Room with Two Double Beds, Saver Rate (non-refundable). AUD 406.36 before any extras. The Novotel confirmation numbers are not recorded.</li>' +
+'<li><b>Queenstown, Friday 11 December:</b> Novotel Queenstown Lakeside, one night, Standard Room with Two Double Beds, Saver Rate (non-refundable). AUD 406.36 before any extras.</li>' +
 '</ul></div>' +
 '<div class="box"><h3>Book these next, in this order</h3><ol>' +
 '<li>The Milford Sound cruise for Tuesday 8 December, with free cancellation, so a closed road costs you nothing.</li>' +
@@ -354,7 +353,11 @@ var BOOKINGS = '' +
 '<li>Australian passport holders need no visa and no NZeTA. Check each passport&#39;s expiry date against your travel dates and the airline&#39;s conditions.</li>' +
 '<li>Each of you completes a free New Zealand Traveller Declaration before you reach passport control. Do it before you board.</li>' +
 '<li>Online check-in opens 24 hours before each flight, in the Air New Zealand app. Your e-ticket (booking reference FWF6FH) is the document for check-in, customs and security.</li>' +
+'<li>Check Budget&#39;s fuel policy before you return the car.</li>' +
+'<li>Check whether the Novotel booking for Friday 11 December includes parking.</li>' +
+'<li>Ask Air New Zealand whether your bags are checked through to Queenstown on Sunday morning and to Sydney on Sunday 13 December. Auckland Airport says you must collect them after an international arrival in any case.</li>' +
 '<li>Declare used hiking boots and other outdoor gear. Clean them before you pack them.</li>' +
+'<li>Check biosecurity.govt.nz for the cleaning standard for used hiking gear.</li>' +
 '<li>Ask the Novotel for early check-in on Sunday 6 December, and to hold your bags on Friday 11 and Saturday 12 December.</li>' +
 '<li>Find the excess amount in Budget&#39;s rental terms, and check whether your travel insurance or credit card covers it.</li>' +
 '<li>Bring the driving licence and the credit card used for the car booking. The name on both must match the booking.</li>' +
@@ -365,19 +368,6 @@ var BOOKINGS = '' +
 '</ul></div>' +
 '<div class="box warn"><h3>If the Milford Road is closed on Tuesday</h3>' +
 '<p>Move the Milford cruise to Wednesday 9 December and the Doubtful Sound cruise to Thursday 10 December, and drop the glowworm caves. You do not need to change your accommodation, because all four Te Anau nights are already booked. If Doubtful Sound is cancelled instead, move it to Thursday.</p></div>' +
-'<div class="box"><h3>Not confirmed</h3><ul>' +
-'<li>Which Māori experience to book. None is chosen, and the two listings above are not checked. No other Māori experience was found on this route, and Ko Tāne is in Christchurch.</li>' +
-'<li>Opening hours, sailing times and prices for Kiwi Birdlife Park, the TSS Earnslaw, Te Anau Bird Sanctuary (including the takahē feeding time), the Glowworm Caves (including the 7:00pm departure), the Doubtful Sound cruise and the Arrowtown Chinese Settlement.</li>' +
-'<li>Sunday hours and vegan options at the Frankton breakfast places, and whether any of them is quiet.</li>' +
-'<li>Whether the Novotel and the Te Anau villa can check you in early or keep your bags, and whether the villa has any view. Its page does not describe one.</li>' +
-'<li>The Novotel confirmation numbers, whether the Friday night includes parking, and the bedding setup the villa gives you.</li>' +
-'<li>The excess amount and the fuel policy for the Budget car.</li>' +
-'<li>Overnight opening times for the Air New Zealand transfer desk and the domestic check-in in Auckland.</li>' +
-'<li>Whether your bags are checked through to Queenstown on Sunday morning and to Sydney on Sunday 13 December. Auckland Airport says you must collect them after an international arrival in any case.</li>' +
-'<li>The rule that used hiking boots must be declared comes from a travel blog. Check biosecurity.govt.nz for the cleaning standard.</li>' +
-'<li>Aoraki/Mount Cook is not in this plan. The sources disagreed on whether the Hooker Valley Track is partly closed, and the drive is long, so check DOC if you want to add it.</li>' +
-'<li>Hotel names, prices and shuttle times near Auckland Airport, and the price of every item above.</li>' +
-'</ul></div>' +
 '<div class="footer"><h3>Sources</h3><p>Booking details come from the Budget confirmation and the Distinction and Novotel booking screens you sent.</p><p style="margin-top:8px">Pages opened:</p><ul>' +
 '<li><a href="https://www.distinctionhotelsteanau.co.nz/teanau-hotel-accommodation/deluxe-two-bedroom-villa">Deluxe Two Bedroom Villa (Distinction Te Anau)</a></li>' +
 '<li><a href="https://www.fiordland.org.nz/plan/getting-to-fiordland/">Getting to Fiordland</a></li>' +
