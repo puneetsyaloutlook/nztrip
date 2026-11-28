@@ -231,13 +231,21 @@ var DAYS = [
     facts: [["Driving", "120 km each way, allow about 3 hours"], ["Walking", "Short stops"], ["Stay", "Te Anau"]],
     stops: [
       { type: "drive", title: "Te Anau to Milford Sound",
-        stats: [["Leave", "About 7:00am"], ["Duration", "About 3 hours"], ["Distance", "120 km"]],
-        text: ["The drive takes about 2 hours without stops. Allow about 3 hours with viewpoints and short walks beside the road, plus about 30 minutes to park. Check in for the cruise at least 20 minutes before departure, so book a cruise that leaves from about 10:30am.",
+        stats: [["Leave", "7:00am for the track walk, otherwise by 12:30pm"], ["Duration", "About 2 hours, allow 2.5"], ["Distance", "120 km"]],
+        text: ["Mitre Peak says to allow 2.5 hours from Te Anau including stops, and more time to find a parking space in summer. Check-in for the 3:55pm cruise closes at 3:25pm. Fill up with fuel in Te Anau, because there is no fuel in Milford Sound, and expect limited phone service on the road.",
                "Your villa rate includes breakfast, served from 6:30am on weekdays, so eat quickly or take something with you."] },
-      { type: "cruise", title: "Milford Sound cruise",
-        stats: [["Departs", "From about 10:30am, set when you book"], ["Length", "About 2 hours"], ["Price", "NZ$155 to NZ$175 per person, from listings"]],
-        text: [],
-        book: "Book first, online, with free cancellation, because a closed road moves the cruise to Wednesday." },
+      { type: "sight", title: "Before the cruise (choose any)",
+        stats: [["Time", "From about 9:00am to 3:25pm"], ["Where", "Milford Sound"]],
+        text: ["Foreshore Walk: a 30 minute loop with views of Mitre Peak, starting beside the cruise terminal.",
+               "Milford Track day walk: a 10 minute water taxi from Deepwater Basin to Sandfly Point, then an easy 11 km return walk to Giant Gate Falls that takes 3 to 4 hours. It costs NZ$65 to NZ$75 per adult. The boats leave at 8:30am, 9:30am and 12:30pm, and the return boat runs from 12pm to 4:30pm. Take the 9:30am boat and leave Te Anau by 7:00am. Confirm the December times when you book, and take lunch to eat at the falls.",
+               "Scenic helicopter flight from Milford Sound Airport: about 25 minutes. Ask for the price when you book.",
+               "Only two of you are walking, so the third person can do the Foreshore Walk or the flight."],
+        book: "Book the water taxi and any flight in advance." },
+      { type: "cruise", title: "Milford Sound cruise (Mitre Peak Cruises)",
+        stats: [["Departs", "3:55pm, back at 5:55pm"], ["Check-in", "Closes 3:25pm, first desk on the left inside the main entrance"], ["Where", "Milford Sound Visitor Terminal, State Highway 94"], ["Parking", "Paid main car park, 10 minute walk. Free at Deepwater Basin, 20 to 30 minute walk"]],
+        text: ["The boat has no food for sale. Tea, coffee and hot chocolate are free on board. Bring lunch, a waterproof jacket, warm clothing, sunscreen, insect repellent and a camera.",
+               "Phone Mitre Peak on 0800 744 633 or +64 3 249 8110 for changes."],
+        book: "Booked: Cruise Only from Milford Sound, 3 adults, booking 393601809, NZ$562.77 (A$480.96). Full refund if you cancel at least 24 hours before." },
       { type: "drive", title: "Milford Sound to Te Anau",
         stats: [["Leave", "Afternoon"], ["Duration", "About 2 hours, allow 3"], ["Distance", "120 km"]],
         text: ["Road status: <a href='https://www.nzta.govt.nz/projects/sh94-milford-road/sh94-milford-road-status'>NZTA SH94 Milford Road status</a>, highwayinfo.govt.nz or 0800 44 44 49. Return to Te Anau for the night, have dinner in town and go to bed early."] }
@@ -342,10 +350,11 @@ var BOOKINGS = '' +
 '<li><b>Queenstown, Sunday 6 December:</b> Novotel Queenstown Lakeside, one night, Standard Room with Two Double Beds, Saver Rate (non-refundable, paid online). AUD 413.53 at checkout, including AUD 49.45 for parking (NZD 501.75). Check-in 3:00pm, check-out 11:00am.</li>' +
 '<li><b>Sydney Airport parking:</b> International T1 P7, entry Saturday 5 December at 3:00pm, exit Sunday 13 December at 1:00pm, $173.14 after the promo code.</li>' +
 '<li><b>Te Anau, Monday 7 to Friday 11 December:</b> Distinction Te Anau Hotel and Villas, Deluxe Two Bedroom Villa, four nights with breakfast, on the 3 Nights B&amp;B Save 20% deal (non-refundable). NZ$2,342.40. Booking ID DIS-468195. Check-in from 2:00pm, check-out before 10:00am. You asked for the king and two singles bedding, which is not guaranteed.</li>' +
+'<li><b>Milford Sound cruise, Tuesday 8 December:</b> Mitre Peak Cruises, Cruise Only from Milford Sound, 3:55pm to 5:55pm, 3 adults, NZ$562.77 (A$480.96). Booking 393601809. Check-in closes 3:25pm. Free cancellation or changes up to 24 hours before, on 0800 744 633.</li>' +
 '<li><b>Queenstown, Friday 11 December:</b> Novotel Queenstown Lakeside, one night, Standard Room with Two Double Beds, Saver Rate (non-refundable). AUD 406.36 before any extras.</li>' +
 '</ul></div>' +
 '<div class="box"><h3>Book these next, in this order</h3><ol>' +
-'<li>The Milford Sound cruise for Tuesday 8 December, with free cancellation, so a closed road costs you nothing.</li>' +
+'<li>The Milford Track water taxi for Tuesday 8 December, if you want the walk, and a scenic flight if one of you wants it.</li>' +
 '<li>The Doubtful Sound cruise for Wednesday 9 December, from Te Anau.</li>' +
 '<li>The TSS Earnslaw cruise on Friday 11 December, the Te Anau Glowworm Caves trip on Thursday 10 December, and a Māori culture experience on Friday evening or Saturday morning.</li>' +
 '</ol><p>Also book a room near Auckland Airport for Saturday 12 December. It is less urgent than the items above.</p></div>' +
@@ -367,7 +376,7 @@ var BOOKINGS = '' +
 '<li>Milford Road status at the <a href="https://www.nzta.govt.nz/projects/sh94-milford-road/sh94-milford-road-status">NZTA SH94 Milford Road status</a>, at highwayinfo.govt.nz or on 0800 44 44 49. Milford Lodge says the road usually closes on some days each year because of weather, avalanches, slips or flooding.</li>' +
 '</ul></div>' +
 '<div class="box warn"><h3>If the Milford Road is closed on Tuesday</h3>' +
-'<p>Move the Milford cruise to Wednesday 9 December and the Doubtful Sound cruise to Thursday 10 December, and drop the glowworm caves. You do not need to change your accommodation, because all four Te Anau nights are already booked. If Doubtful Sound is cancelled instead, move it to Thursday.</p></div>' +
+'<p>Phone Mitre Peak on 0800 744 633 to move the Milford cruise to Wednesday 9 December. They need at least 24 hours notice, so check the road status on Monday evening. Then move the Doubtful Sound cruise to Thursday 10 December and drop the glowworm caves. You do not need to change your accommodation, because all four Te Anau nights are already booked. If Doubtful Sound is cancelled instead, move it to Thursday.</p></div>' +
 '<div class="footer"><h3>Sources</h3><p>Booking details come from the Budget confirmation and the Distinction and Novotel booking screens you sent.</p><ul style="margin-top:8px">' +
 '<li><a href="https://www.distinctionhotelsteanau.co.nz/teanau-hotel-accommodation/deluxe-two-bedroom-villa">Deluxe Two Bedroom Villa (Distinction Te Anau)</a></li>' +
 '<li><a href="https://www.fiordland.org.nz/plan/getting-to-fiordland/">Getting to Fiordland</a></li>' +
